@@ -1,0 +1,62 @@
+@import '../../styles/variables.css';
+
+.themeButton {
+	width: 4rem;
+	height: 1.5rem;
+	border-radius: 50px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: var(--inner-shadow-4);
+	background-color: var(--gray-2);
+	outline: 1px solid var(--gray-4);
+
+	@mixin dark {
+		background-color: var(--gray-7);
+		outline: 1px solid var(--gray-8);
+	}
+
+	&:active {
+		background-color: var(--gray-4);
+
+		@mixin dark {
+			background-color: var(--gray-9);
+		}
+	}
+}
+
+.darkIcon,
+.lightIcon {
+	height: 1.5rem;
+	position: absolute;
+	margin-inline: 5px;
+	top: 0;
+	transition: all 0.3s var(--ease-squish-4);
+
+	&.active {
+		opacity: 1;
+	}
+	&.disabled {
+		opacity: 0;
+	}
+}
+
+/* // animate darkIcon in from the right side */
+.darkIcon {
+	left: 0;
+	color: var(--gray-5);
+	filter: drop-shadow(0px 0px 3px rgba(222, 226, 230, 0.4));
+
+	&.disabled {
+		left: -30px;
+		rotate: 190deg;
+	}
+}
+.lightIcon {
+	right: 0;
+	color: var(--gray-6);
+
+	&.disabled {
+		right: -30px;
+		rotate: 190deg;
+	}
+}

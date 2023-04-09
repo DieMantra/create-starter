@@ -1,0 +1,81 @@
+@use '../variables/colors' as c;
+@use '../variables/font-sizes' as fs;
+@use '../variables/easings' as e;
+@use '../sass-utils/mixins' as m;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dt {
+	color: c.$slate-900;
+	@include m.dark {
+		color: c.$slate-100;
+	}
+}
+p {
+	color: c.$slate-800;
+	@include m.dark {
+		color: c.$slate-200;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: fs.$font-weight-9;
+	line-height: fs.$font-lineheight-1;
+}
+:where(a[href]) {
+	color: c.$blue-500;
+	@include m.dark {
+		color: c.$blue-400;
+	}
+	&:visited {
+		color: c.$purple-500;
+		@include m.dark {
+			color: c.$purple-400;
+		}
+	}
+}
+:where(h1) {
+	font-size: fs.$font-size-8;
+}
+:where(h2) {
+	font-size: fs.$font-size-6;
+}
+:where(h3) {
+	font-size: fs.$font-size-5;
+}
+:where(h4) {
+	font-size: fs.$font-size-4;
+}
+:where(h5) {
+	font-size: fs.$font-size-3;
+}
+:where(p, ul, ol, dl, h6) {
+	font-size: fs.$font-size-2;
+}
+:where(a, u, ins, abbr) {
+	text-underline-offset: 1px;
+}
+
+:where(a):where([href]) {
+	text-decoration-color: c.$indigo-200;
+}
+:where(a):where([href]):where(:visited) {
+	text-decoration-color: c.$purple-200;
+}
+:where(a):where(:not(:hover)) {
+	text-decoration: inherit;
+}
+
+::placeholder {
+	color: c.$gray-700;
+	opacity: 0.75;
+}

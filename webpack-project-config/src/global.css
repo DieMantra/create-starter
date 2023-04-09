@@ -1,0 +1,15 @@
+/* the props */
+@import '../node_modules/open-props/open-props.min.css';
+@import '../node_modules/open-props/normalize.min.css';
+
+/* optional imports that use the props */
+@import '../node_modules/open-props/colors.min.css';
+
+/* ALL GLOBAL VALUES HERE */
+body * {
+	transition: all 0.1s ease-in-out;
+}
+
+li {
+	padding-inline: 5px;
+}

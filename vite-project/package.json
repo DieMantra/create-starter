@@ -1,0 +1,45 @@
+{
+	"name": "vite-project",
+	"version": "1.0.0",
+	"description": "Vite + Redux + Sass + React + Express + Typescript + Prisma + Postgres + tRPC",
+	"private": true,
+	"type": "module",
+	"engines": {
+		"node": ">=16.1.0"
+	},
+	"scripts": {
+		"@client": "pnpm --filter react-client",
+		"@server": "pnpm --filter express-server",
+		"dev": "pnpm --recursive --parallel --stream run dev",
+		"deploy:client": "pnpm --filter react-client run deploy:production",
+		"deploy:server": "pnpm --filter express-server run deploy:production",
+		"build:client": "eslint ./@apps/client && pnpm --filter react-client run build",
+		"build:server": "eslint ./@apps/server && pnpm --filter express-server run build",
+		"lint:client": "eslint ./@apps/client",
+		"lint:server": "eslint ./@apps/server"
+	},
+	"keywords": [
+		"Vite",
+		"Redux",
+		"Sass",
+		"React",
+		"Express",
+		"Typescript"
+	],
+	"author": "Tyson",
+	"license": "ISC",
+	"devDependencies": {
+		"@trpc/server": "^10.18.0",
+		"@typescript-eslint/eslint-plugin": "^5.57.0",
+		"@typescript-eslint/parser": "^5.57.0",
+		"eslint": "^8.37.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"prettier": "^2.8.7",
+		"typescript": "^5.0.3",
+		"zod": "^3.21.4"
+	}
+}

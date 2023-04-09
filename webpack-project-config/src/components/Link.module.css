@@ -1,0 +1,28 @@
+@import '../styles/variables.css';
+
+.listItem {
+	& a {
+		text-decoration: underline;
+		color: var(--gray-10);
+		font-weight: 300;
+
+		position: relative;
+		z-index: 22;
+
+		@mixin hover {
+			color: var(--blue-8);
+		}
+
+		&:visited {
+			color: var(--purple-7);
+		}
+
+		@mixin dark {
+			color: var(--gray-0);
+
+			@mixin hover {
+				color: var(--blue-2);
+			}
+		}
+	}
+}

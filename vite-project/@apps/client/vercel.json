@@ -1,0 +1,6 @@
+{
+	"version": 2,
+	"buildCommand": "pnpm run deploy:production",
+
+	"outputDirectory": "dist"
+}

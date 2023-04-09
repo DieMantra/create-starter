@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"module": "ES2020",
+		"target": "ESNext",
+		"allowJs": false,
+		"sourceMap": true,
+		"strict": true,
+		"useDefineForClassFields": true,
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"skipLibCheck": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx"
+	},
+	"references": [{ "path": "@apps/client" }, { "path": "@apps/server" }],
+	"exclude": ["node_modules/**/*"]
+}

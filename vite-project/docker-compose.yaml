@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  root:
+    container_name: root_container
+    build:
+      context: .
+      dockerfile: ./Dockerfile.root
+    volumes:
+      - .:/app
+      - '/app/node_modules'
+    stdin_open: true
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - '5173:5173'
+      - '3000:3000'
+
+  # client:
+  #   container_name: react-client
+  #   build:
+  #     context: .
+  #     dockerfile: ./@apps/client/Dockerfile.client
+  #   volumes:
+  #     - './@apps/client:/app/@apps/client'
+  #     - '/app/@apps/client/node_modules'
+  #   ports:
+  #     - '5173:5173'
+  #   depends_on:
+  #     - server
+  #   stdin_open: true
+
+  # server:
+  #   container_name: express-server
+  #   build:
+  #     context: .
+  #     dockerfile: ./@apps/server/Dockerfile.server
+  #   volumes:
+  #     - './@apps/server:/app/@apps/server'
+  #     - '/app/@apps/server/node_modules'
+  #   ports:
+  #     - '3000:3000'
+  #   depends_on:
+  #     - db
+  #   stdin_open: true
+
+  db:
+    image: mysql:latest
+    container_name: mysql-db
+    environment:
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: my_user
+      MYSQL_PASSWORD: my_password
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+volumes:
+  db-data:

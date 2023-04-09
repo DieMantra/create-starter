@@ -1,0 +1,21 @@
+@use 'sass/sass-utils/mixins' as m;
+@use 'sass/variables/colors' as c;
+@use 'sass/variables/easings' as e;
+
+@import 'sass/base/reset';
+@import 'sass/base/typography';
+
+body {
+	@include m.dark {
+		color: c.$slate-100;
+		background-color: c.$slate-800;
+
+		& > * {
+			background-color: c.$slate-700;
+		}
+	}
+}
+
+* {
+	transition: all 0.0666s e.$ease-out-1;
+}

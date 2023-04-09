@@ -1,0 +1,33 @@
+@mixin onlySmall {
+	@media screen and (width < 478px) {
+		@content;
+	}
+}
+
+@mixin screen($size) {
+	@if $size == 'mobile-only' {
+		@media (width <= 600px) {
+			@content;
+		}
+	}
+	@if $size == 'tablet-portrait' {
+		@media (width <= 600px) {
+			@content;
+		}
+	}
+	@if $size == 'tablet-landscape' {
+		@media (width <= 900px) {
+			@content;
+		}
+	}
+	@if $size == 'desktop' {
+		@media (width <= 1200px) {
+			@content;
+		}
+	}
+	@if $size == 'big-desktop' {
+		@media (width >= 1800px) {
+			@content;
+		}
+	}
+}

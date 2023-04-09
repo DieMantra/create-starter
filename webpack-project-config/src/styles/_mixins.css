@@ -1,0 +1,56 @@
+/* 
+  THEMING
+*/
+@define-mixin dark {
+	html[data-theme='dark'] & {
+		@mixin-content;
+	}
+}
+@define-mixin dark-hover {
+	html[data-theme='dark'] &:hover {
+		@mixin-content;
+	}
+}
+@define-mixin dark-active {
+	html[data-theme='dark'] &:active {
+		@mixin-content;
+	}
+}
+/* 
+  DEVICE TARGETING
+*/
+@define-mixin hover {
+	@media (--mouse), (--pointer) {
+		&:hover {
+			@mixin-content;
+		}
+	}
+}
+
+@define-mixin noHover {
+	@media (--touch), (--stylus) {
+		@mixin-content;
+	}
+}
+/* 
+  DEFAULT UI HIDERS
+*/
+@define-mixin hideScrollBar {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+@define-mixin hideAutoFill($backgroundColor) {
+	&:-webkit-autofill {
+		box-shadow: 0 0 0px 1000px $backgroundColor inset;
+		-webkit-box-shadow: 0 0 0px 1000px $backgroundColor inset;
+	}
+
+	&:-webkit-autofill:focus {
+		box-shadow: 0 0 0px 1000px $backgroundColor inset;
+		-webkit-box-shadow: 0 0 0px 1000px $backgroundColor inset;
+	}
+}

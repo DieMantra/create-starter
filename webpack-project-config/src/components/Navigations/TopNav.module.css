@@ -1,0 +1,21 @@
+@import '../../styles/variables.css';
+
+.container {
+	height: var(--size-7);
+	border-bottom: var(--border-size-1) solid var(--gray-3);
+	width: 100%;
+	padding: 0 1rem;
+	transition: all 0.1s ease;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@mixin dark {
+		background-color: var(--gray-8);
+		border-bottom: var(--border-size-1) solid var(--gray-8);
+	}
+	@media (--sm-n-above) {
+		height: var(--size-8);
+	}
+}

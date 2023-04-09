@@ -1,0 +1,23 @@
+@import '../styles/variables.css';
+.test {
+	animation: var(--animation-blink);
+}
+
+.box {
+	height: 500px;
+	aspect-ratio: 1/1;
+	margin: 0 auto;
+	box-shadow: var(--shadow-5);
+	color: var(--blue-4);
+	font-size: var(--font-size-fluid-2);
+	background-color: var(--red-3);
+	animation: var(--animation-fade-in) forwards;
+
+	@media (--md-n-above) {
+		background-color: red;
+	}
+
+	@mixin hover {
+		background-color: black;
+	}
+}
